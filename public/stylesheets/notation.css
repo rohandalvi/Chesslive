@@ -1,0 +1,9 @@
+.box{
+    border: 1px solid grey;
+    padding: 10px 10px 10px 10px;
+}
+#notation{
+    overflow-y: scroll;
+    height: 200px;
+    width: 300px;
+}

@@ -1,0 +1,14 @@
+// this should take care of both moves notation and timer. The timer needs to callback on time end.
+
+link(rel='stylesheet', href='/stylesheets/notation.css')
+div(class="container")
+    div(class="row")
+        div(class="col-md-5")
+            div(class="box")
+                p this goes inside the box and much more
+                span(class="row")
+                    p this is where player name would goes
+                span(class="row")
+                    p this is where button comes
+                div(class="box" id="notation")
+                    p Hmm, it should be as easy as typing localhost:3000 into your favourite web browser. Here are some issues I could think of: 1. Ensure that the server is still running in the cmd (don't close that window or hit ctrl+c until you are done working for the day or want to reboot the server) 2. Ensure there hasn't been a problem starting your app. The initial output from the inbuilt Rails server is exactly three lines when the app is running correctly. 3. If going to localhost:3000 gives you a generic page, you need to delete index.html from your app's public folder and set a root route in your config/routes.rb file.

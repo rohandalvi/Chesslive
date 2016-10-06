@@ -1,0 +1,7 @@
+node_modules/
+*.txt
+*.log
+.vscode/
+jenkins/
+test-reports.xml
+coverage/

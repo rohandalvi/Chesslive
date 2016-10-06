@@ -1,0 +1,37 @@
+{
+  "name": "chesslive",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "mocha --reporter spec test > test-reports.xml",
+    "coverage": "istanbul cover _mocha"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "babel": "^6.5.2",
+    "body-parser": "^1.15.2",
+    "chess.js": "^0.10.2",
+    "chessboardjs": "0.0.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.13.4",
+    "firebase": "^3.3.2",
+    "jade": "~1.11.0",
+    "mocha": "^3.0.2",
+    "morgan": "~1.7.0",
+    "promise": "^7.1.1",
+    "q": "^1.4.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "serve-favicon": "~2.3.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2",
+    "q": "^1.4.1"
+  }
+}

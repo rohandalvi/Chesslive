@@ -1,0 +1,28 @@
+script(src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js")
+script(src="/javascripts/utilities.js")
+
+script(src="/javascripts/seek.js")
+
+link(rel='stylesheet' href='/stylesheets/seek.css')
+link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+div(class="container-fluid")
+    div(class="row")
+        p
+            {{co}}
+        div(class="col-md-6 col-md-offset-3 text-center" style="text-align: center")
+            div(class="box")
+                table(class="table table-hover" style="cursor: pointer")
+                    thead
+                        tr
+                            th #
+                            th Player
+                            th Rating
+                            th Time
+                    tbody
+                        tr
+                            th 1
+                            td bulletBrawler
+                            td 2400
+                            td 3+1

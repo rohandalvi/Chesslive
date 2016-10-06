@@ -1,0 +1,11 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.chessboard{
+  padding: 10px 10px 10px 10px;
+  margin-left: 10px;
+}
+a {
+  color: #00B7FF;
+}
