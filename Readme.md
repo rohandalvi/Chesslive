@@ -12,4 +12,4 @@ Structure:
 4. Single channel chat (as a side-app)
 5. Help
 
- ![Build Status] (http://54.70.105.163:8080/job/Chesslive/badge/icon)
+[![Build Status](http://54.70.105.163:8080/job/Chesslive/badge/icon)](http://54.70.105.163:8080/job/Chesslive/)
