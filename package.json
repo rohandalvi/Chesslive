@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha --reporter spec test > test-reports.xml",
+    "test": "mocha --reporter spec test > test-reports.xml ",
     "coverage": "istanbul cover _mocha"
   },
   "dependencies": {
@@ -26,6 +26,7 @@
   "devDependencies": {
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
-    "q": "^1.4.1"
+    "q": "^1.4.1",
+    "react-tools": "^0.13.3"
   }
 }
