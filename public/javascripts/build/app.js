@@ -3932,12 +3932,23 @@ module.exports = require('./lib/React');
 
 },{"./lib/React":9}],32:[function(require,module,exports){
 var React = require('react');
+
 module.exports = React.createClass({displayName: "exports",
-  render: function(){
-  return (
-    React.createElement("h1", null, "Challenges window ")
-  )
-  }
+render: function() {
+    return (
+    React.createElement("h1", null, "Hello, world from a React.js Component!")
+    )
+}
 });
 
-},{"react":31}]},{},[32]);
+},{"react":31}],33:[function(require,module,exports){
+var React = require('react');
+
+var HelloWorld = require('./HelloWorld.jsx');
+
+React.render(
+    React.createElement(HelloWorld, null),
+    document.getElementById('example')
+);
+
+},{"./HelloWorld.jsx":32,"react":31}]},{},[33]);

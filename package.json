@@ -21,6 +21,8 @@
     "morgan": "~1.7.0",
     "promise": "^7.1.1",
     "q": "^1.4.1",
+    "react": "^15.4.0-rc.4",
+    "react-dom": "^15.3.2",
     "serve-favicon": "~2.3.0",
     "winston": "^2.2.0"
   },
@@ -31,6 +33,7 @@
     "mocha": "^3.0.2",
     "q": "^1.4.1",
     "react": "^15.4.0-rc.4",
+    "react-dom": "^15.3.2",
     "react-tools": "^0.13.3",
     "reactify": "^1.1.1",
     "vinyl-source-stream": "^1.1.0"
