@@ -18893,13 +18893,12 @@ module.exports = require('./lib/React');
 
 },{"./lib/React":52}],158:[function(require,module,exports){
 var React = require('react');
-
 module.exports = React.createClass({displayName: "exports",
-render: function() {
-    return (
-    React.createElement("h1", null, "Hello, world from a React.js Component! Rohan!")
-
-    )
+render: function(){
+  console.log("this ",this);
+  return (
+    React.createElement("p", null, this.props.id)
+  );
 }
 });
 
@@ -18907,11 +18906,11 @@ render: function() {
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var HelloWorld = require('./HelloWorld.jsx');
+var HelloWorld = require('./Challenge.jsx');
 
 ReactDOM.render(
     React.createElement(HelloWorld, null),
-    document.getElementById('example')
+    document.getElementById('challenge')
 );
 
-},{"./HelloWorld.jsx":158,"react":157,"react-dom":28}]},{},[159]);
+},{"./Challenge.jsx":158,"react":157,"react-dom":28}]},{},[159]);
