@@ -11,7 +11,7 @@ function isAuthenticated(req,res,next){
 
 function allowToMove(req,res,next){
     var currentUser = authRef.currentUser;
-    
+
     var gameId = req.params.gameId;
     if(!currentUser || !gameId) res.redirect('/notFound');
     game.getGame(gameId).then(function(gameObject){
@@ -24,6 +24,8 @@ function allowToMove(req,res,next){
     });
 }
 
+
+
 function getCurrentUser(){
     return authRef.currentUser;
 }
@@ -33,7 +35,7 @@ function register(email,password){
 
     authRef.createUserWithEmailAndPassword(email,password)
     .catch(function(error){
-        
+
         var errorCode = error.code;
         var errorMessage = error.message;
         if(error){

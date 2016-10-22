@@ -4,7 +4,13 @@ var Utilities = function(){
 Utilities.prototype.postRequest = function(data, url,callback){
     var base = 'http://localhost:3000/';
     url = base+url;
-    $.post(url,data,callback);
+    $.post({method: "POST", url: url, data: data},callback);
+}
+
+Utilities.prototype.getRequest = function(data, url, callback){
+  var base = 'http://localhost:3000/';
+  url = base+url;
+  $.ajax({method: "GET", url: url, data: data}, callback);
 }
 Utilities.prototype.initiateFirebase = function(){
     var config = {
