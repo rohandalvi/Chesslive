@@ -2,7 +2,7 @@
 Will contain following functions.
 1. createGame() //private function invoked by requestGame
 2. requestGame() //invoked by the user
-3. abortGame(gameId, permissions) // abort a game, Can only be requested by player. 
+3. abortGame(gameId, permissions) // abort a game, Can only be requested by player.
 */
 var FbApp = require('../fire');
 var Q = require('q');
@@ -65,4 +65,4 @@ module.exports = {
     createGame : createGame,
     addMove: addMove,
     getSampleJSON: getSampleJSON
-};  
+};

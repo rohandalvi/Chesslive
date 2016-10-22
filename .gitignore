@@ -5,3 +5,5 @@ node_modules/
 jenkins/
 test-reports.xml
 coverage/
+public/javascripts/lib/.module-cache/
+public/javascripts/build/.module-cache/
