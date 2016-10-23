@@ -1,7 +1,12 @@
 extends layout
 block content
-
-  h1= title
-  p Welcome to #{title}
+  include nav
+  h1= heading
+  p= description
   //include seek
-  #challenge
+  div(class="container")
+    div(class="row")
+      div(class="col-md-4")
+        button(type="button" class="btn btn-info")
+          New Challenge
+    #challenge

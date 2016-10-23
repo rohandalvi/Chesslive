@@ -1,9 +1,9 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var HelloWorld = require('./Challenge.jsx');
+var Challenge = require('./Challenge.jsx');
 var firebase = require('firebase');
 ReactDOM.render(
-    <HelloWorld />,
+    <Challenge />,
     document.getElementById('challenge')
 );

@@ -2,13 +2,44 @@ var React = require('react');
 var Challenges = require('./Challenges.jsx');
 var FbApp = require('../../../fire.js');
 var _ = require('underscore');
+var MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');
+var RaisedButton = require('material-ui/RaisedButton');
+const App = () => (
+  <MuiThemeProvider>
+
+  </MuiThemeProvider>
+)
 var Challenge = React.createClass({
   render: function(){
 
     var createItem = function(item, index) {
-     return <li key={ index }><h4>User: {item.user} </h4> <p>Rating: {item.rating}</p> <p>Time Control: {item.time}</p></li>;
+     return (
+       <tr key={index}>
+         <td>{item.user}</td>
+         <td>{item.rating}</td>
+         <td>{item.time}</td>
+       </tr>
+     ) ;
    };
-   return <ul>{ this.props.items.map(createItem) }</ul>;
+   return (
+
+       <table className = "table table-striped">
+       <thead>
+        <tr>
+          <th>User</th>
+          <th>Rating</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        { this.props.items.map(createItem) }
+      </tbody>
+
+       </table>
+     
+
+
+   );
   }
 });
 module.exports = React.createClass({
@@ -57,6 +88,7 @@ module.exports = React.createClass({
     return (
       <div>
         <Challenge items={this.state.items} />
+
 
       </div>
     );
