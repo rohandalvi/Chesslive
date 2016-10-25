@@ -2,20 +2,18 @@ var React = require('react');
 var Challenges = require('./Challenges.jsx');
 var FbApp = require('../../../fire.js');
 var _ = require('underscore');
-var MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');
-var RaisedButton = require('material-ui/RaisedButton');
-const App = () => (
-  <MuiThemeProvider>
 
-  </MuiThemeProvider>
-)
 var Challenge = React.createClass({
-  render: function(){
+  ed: function(val){
 
+    console.log("Got Ed ",val);
+  },
+  render: function(){
+    var that = this;
     var createItem = function(item, index) {
      return (
-       <tr key={index}>
-         <td>{item.user}</td>
+       <tr key={index} onClick = {that.ed(5)}>
+         <td >{item.user}</td>
          <td>{item.rating}</td>
          <td>{item.time}</td>
        </tr>
@@ -25,7 +23,7 @@ var Challenge = React.createClass({
 
        <table className = "table table-striped">
        <thead>
-        <tr>
+        <tr onClick={this.props.onRowClick}>
           <th>User</th>
           <th>Rating</th>
           <th>Time</th>
@@ -36,7 +34,7 @@ var Challenge = React.createClass({
       </tbody>
 
        </table>
-     
+
 
 
    );
@@ -84,12 +82,13 @@ module.exports = React.createClass({
       });
     }
   },
+  edit: function(){
+    alert("Edit clicked");
+  },
   render: function(){
     return (
       <div>
-        <Challenge items={this.state.items} />
-
-
+        <Challenge items={this.state.items} onRowClick={this.edit} />
       </div>
     );
   }
