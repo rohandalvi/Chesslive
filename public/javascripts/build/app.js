@@ -21387,7 +21387,8 @@ var Challenge = React.createClass({displayName: "Challenge",
        React.createElement("tr", {key: index, onClick: that.ed(5)}, 
          React.createElement("td", null, item.user), 
          React.createElement("td", null, item.rating), 
-         React.createElement("td", null, item.time)
+         React.createElement("td", null, item.time), 
+         React.createElement("td", null, React.createElement("button", {type: "btn", className: "btn btn-info"}, "Let's Go"))
        )
      ) ;
    };

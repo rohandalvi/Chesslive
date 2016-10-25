@@ -16,6 +16,7 @@ var Challenge = React.createClass({
          <td >{item.user}</td>
          <td>{item.rating}</td>
          <td>{item.time}</td>
+         <td><button type="btn" className="btn btn-info">Let's Go</button></td>
        </tr>
      ) ;
    };
