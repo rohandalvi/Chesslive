@@ -8,15 +8,18 @@ var Challenge = React.createClass({
 
     console.log("Got Ed ",val);
   },
+  handleClick: function(val){
+    console.log("Clicked ",val);
+  },
   render: function(){
     var that = this;
     var createItem = function(item, index) {
      return (
-       <tr key={index} onClick = {that.ed(5)}>
+       <tr key={index}>
          <td >{item.user}</td>
          <td>{item.rating}</td>
          <td>{item.time}</td>
-         <td><button type="btn" className="btn btn-info">Let's Go</button></td>
+         <td><button type="btn" className="btn btn-info" onClick = {that.handleClick.bind(null,56)}>Let's Go</button></td>
        </tr>
      ) ;
    };

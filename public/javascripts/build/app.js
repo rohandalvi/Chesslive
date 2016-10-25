@@ -21380,15 +21380,18 @@ var Challenge = React.createClass({displayName: "Challenge",
 
     console.log("Got Ed ",val);
   },
+  handleClick: function(val){
+    console.log("Clicked ",val);
+  },
   render: function(){
     var that = this;
     var createItem = function(item, index) {
      return (
-       React.createElement("tr", {key: index, onClick: that.ed(5)}, 
+       React.createElement("tr", {key: index}, 
          React.createElement("td", null, item.user), 
          React.createElement("td", null, item.rating), 
          React.createElement("td", null, item.time), 
-         React.createElement("td", null, React.createElement("button", {type: "btn", className: "btn btn-info"}, "Let's Go"))
+         React.createElement("td", null, React.createElement("button", {type: "btn", className: "btn btn-info", onClick: that.handleClick.bind(null,56)}, "Let's Go"))
        )
      ) ;
    };
