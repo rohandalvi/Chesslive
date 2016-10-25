@@ -2,24 +2,31 @@ var React = require('react');
 var Challenges = require('./Challenges.jsx');
 var FbApp = require('../../../fire.js');
 var _ = require('underscore');
-
+var Game = require('../../../classes/game.js');
 var Challenge = React.createClass({
   ed: function(val){
 
     console.log("Got Ed ",val);
   },
-  handleClick: function(val){
-    console.log("Clicked ",val);
+  handleClick: function(user,time, challengeKey){
+    console.log("User ",user);
+    console.log("Time ",time);
+
+    Game.removeChallenge(challengeKey).then(function(success){
+      console.log("Game removed successfully");
+    }, function(error){
+      console.log("Game removal error ",error);
+    });
   },
   render: function(){
     var that = this;
     var createItem = function(item, index) {
      return (
        <tr key={index}>
-         <td >{item.user}</td>
-         <td>{item.rating}</td>
-         <td>{item.time}</td>
-         <td><button type="btn" className="btn btn-info" onClick = {that.handleClick.bind(null,56)}>Let's Go</button></td>
+         <td >{item.value.user}</td>
+         <td>{item.value.rating}</td>
+         <td>{item.value.time}</td>
+         <td><button type="btn" className="btn btn-info" onClick = {that.handleClick.bind(null,item.value.user,item.value.time, item.key)}>Let's Go</button></td>
        </tr>
      ) ;
    };
@@ -55,7 +62,10 @@ module.exports = React.createClass({
     FbApp.database().ref().child('challenges').on('child_added', function(snap){
       console.log("Snap ",snap.val());
       console.log(this.state.items);
-      this.state.items.push(snap.val());
+      this.state.items.push({
+        key: snap.key,
+        value: snap.val()
+      });
       this.setState({
         items: this.state.items
       });
@@ -66,7 +76,7 @@ module.exports = React.createClass({
       if(snap.val()!=null){
         var object = snap.val();
 
-        this.state.items = _.without(this.state.items, _.findWhere(this.state.items,{user: object.user}));
+        this.state.items = _.without(this.state.items, _.findWhere(this.state.items,{key: snap.key}));
         this.setState({
           items: this.state.items
         });

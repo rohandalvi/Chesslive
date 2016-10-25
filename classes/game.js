@@ -26,7 +26,18 @@ var createGame = function(gameObject){
     return deferred.promise;
 
 }
-
+var  removeChallenge  = function(challengeKey){
+  var deferred = Q.defer();
+  console.log("challengeKey ",challengeKey);
+  FbApp.database().ref().child('challenges').child(challengeKey).remove()
+  .then(function(snap){
+    deferred.resolve();
+  }).catch(function(error){
+    console.log("Error removing challenge ",error);
+    deferred.reject(error);
+  });
+  return deferred.promise;
+}
 var addMove = function(fen,position,pgn,gameOver,gameId){
     var deferred = Q.defer();
     var gameObject = {
@@ -64,5 +75,6 @@ var getSampleJSON = function(){
 module.exports = {
     createGame : createGame,
     addMove: addMove,
-    getSampleJSON: getSampleJSON
+    getSampleJSON: getSampleJSON,
+    removeChallenge: removeChallenge
 };
